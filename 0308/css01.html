@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <!-- 한글이 적혀도 안깨지도록 한글 호환성 -->
+    <meta charset="UTF-8">
+    <!-- 인터넷익스플로러와 엣지의 호환 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 뷰포트 설정 기기 너비에 맞춤, 축소확대 가능, 스케일 1 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 4일차 1번 파일</title>
+    <style>
+        #div01 > h1 {
+            /* vw(view width) : 뷰포트너비의 1% 그래서 화면 너비에 따라 크기가 바뀐다 */
+            font-size: 5vw;
+            text-align: center;
+        }
+
+        #div02 { background-color: paleturquoise;}
+        #div02 > div {
+            height: 200px;
+        }
+
+        /* 최소너비가 700px 이상일때 스타일 적용 */
+        @media screen and (min-width: 700px) {
+            #div02 {background-color: teal;}
+        }
+    </style>
+</head>
+<body>
+    <div id="div01">
+        <h3>뷰포트를 사용하여 글자 크기 조절하기</h3>
+        <h1>안녕하세요?</h1>
+    </div>
+
+<br><hr><br>
+
+    <div id="div02">
+        <h3>미디어 쿼리 사용하기</h3>
+
+        <div>
+            <p>개발자 모드를 사용하여 화면 크기를 조절해 보세요</p>
+        </div>
+    </div>
+</body>
+</html>

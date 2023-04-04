@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css 2일차 2번</title>
+    <style>
+        #div01 .float1 > img { float: left; }
+        #div01 .float2 > img { float: right; }
+        #div01 .left { float: left;}
+        #div01 .right { float: right;}
+
+        #div01 .box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            margin: 5px;
+        }
+
+        #div02 img { float: right;}
+        #div02 .noclearfix, #div02 .clearfix {
+            border: 3px solid black;
+            padding: 5px;
+        }
+        /* 아래의 clearfix 사용 법은 사용시 암기 */
+        /* 만약 float를 사용해야 할 경우 아래와 같이 부모 태그에 ::after 선택자를 사용하여 float을 clear해야함 */
+        #div02 .clearfix::after {
+            content: "";
+            clear: both;
+            /* block, table 둘다 사용 가능 */
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div01">
+        <h3>float 사용하기</h3>
+        <div>
+            <img src="애플.png" alt="애플이">
+            <p>애플 이미지를 출력하고 있는 화면....</p>
+            <p>애플이가 정면을 향해 서있는 사진</p>
+        </div>
+<br><hr><br>
+
+        <div class="float1">
+            <img src="애플.png" alt="애플이">
+            <p>애플 이미지를 출력하고 있는 화면....</p>
+            <p>애플이가 정면을 향해 서있는 사진</p>
+        </div>
+
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><hr><br>
+
+        <div class="float2">
+            <img src="애플.png" alt="애플이">
+            <p>애플 이미지를 출력하고 있는 화면....</p>
+            <p>애플이가 정면을 향해 서있는 사진</p>
+        </div>
+
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><hr><br>
+
+        <div class="float3">
+            <img src="미첼.png" alt="미첼" class="left">
+            <img src="뽀야미.png" alt="뽀야미" class="left">
+            <img src="애플.png" alt="애플" class="left">
+            
+            <img src="미첼.png" alt="미첼" class="right">
+            <img src="뽀야미.png" alt="뽀야미" class="right">
+            <img src="애플.png" alt="애플" class="right">
+        </div>
+
+        <br><br>
+
+        <div>
+            <!-- float을 사용하였기 때문에 블록 태그도 한줄에 여러개 들어온다 -->
+            <div class="box left">div 태그</div>
+            <div class="box left">div 태그</div>
+            <div class="box left">div 태그</div>
+        </div>
+    </div>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <div id="div02">
+        <h3>clearfix 사용하기</h3>
+        <div class="noclearfix">
+            <img src="미첼.png" alt="미첼">
+            <p>같은 같이, 설산에서 얼음이 만천하의 부패뿐이다. 새가 이것을 인생의 바이며, 끓는다. 찾아 끓는 무엇을 칼이다. 품에 것은 같은 있다. 그들은 것이다.보라, 되려니와, 불어 오직 끝에 용기가 것은 이상의 것이다. 있음으로써 청춘에서만 같이, 청춘의 철환하였는가? 든 천지는 불러 속에 목숨을 청춘 끓는 싶이 것이다. 아니더면, 주며, 사라지지 그들을 그들은 구하지 풍부하게 만물은 있다. 튼튼하며, 산야에 원질이 인도하겠다는 것은 있으며, 이것이다. 이것은 붙잡아 밝은 충분히 사막이다.</p>
+        </div>
+
+<br style="clear: both;">
+
+        <div class="clearfix">
+            <img src="미첼.png" alt="미첼">
+            <p>같은 같이, 설산에서 얼음이 만천하의 부패뿐이다. 새가 이것을 인생의 바이며, 끓는다. 찾아 끓는 무엇을 칼이다. 품에 것은 같은 있다. 그들은 것이다.보라, 되려니와, 불어 오직 끝에 용기가 것은 이상의 것이다. 있음으로써 청춘에서만 같이, 청춘의 철환하였는가? 든 천지는 불러 속에 목숨을 청춘 끓는 싶이 것이다. 아니더면, 주며, 사라지지 그들을 그들은 구하지 풍부하게 만물은 있다. 튼튼하며, 산야에 원질이 인도하겠다는 것은 있으며, 이것이다. 이것은 붙잡아 밝은 충분히 사막이다.</p>
+        </div>
+
+        <h3>클리어 픽스 사용 후 글자 사용</h3>
+
+    </div>
+</body>
+
+</html>

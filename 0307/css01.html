@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css 3일차 1번</title>
+    <style>
+        /* 인접 형제 선택자 : 같은 부모를 가진 형제요소 중 첫번째 동생요소에만 스타일 적용 */
+        #div01 > h1 + p {
+            background-color: #222;
+            color: #fff;
+        }
+
+        /* 인접 형제 선택자 : h4를 선택했지만 h4가 h1바로 다음에 있는 것이 아니기 때문에 선택되지 않음 */
+        #div01 > h1 + h4 {
+            background-color: aquamarine;
+            color: #000;
+        }
+
+        /* 형제 선택자로 색상 변경 */
+        #div01 > h1 ~ p {
+            color: blue;
+        }
+
+        /* 속성선택자 href가 있는 요소들 해당 스타일 적용 */
+        /* id값이 div02인 태그의 자식 태그 중 class값이 ul1인 태그의 자손 ㅌ그 중 a인 태그가 가지고 있는 속성 중 href가 있는지 여부를 확인하여 스타일을 적용 */
+        #div02 > .ul1 a[href] {
+            background-color: yellow;
+            border: 1px solid #ccc;
+            font-weight: normal;
+            /* 글자에 줄 넣는 속성, 밑줄 없애는 기능 */
+            text-decoration: none;
+        }
+        
+        /* id값이 div02인 태그의 자식 태그 중 class값이 ul2인 태그의 자손 태그 중 a인 태그가 가지고 있는 속성 중 href값이 target="_blank"인 태그에만 스타일을 적용 */
+        #div02 > .ul2 a[target="_blank"] {
+            padding-right: 30px;
+            background: url("001.jpg") no-repeat center right;
+        }
+        /* id값이 div02인 태그의 자식 태그중 class값이 ul3인 태그 중 a 태그를 선택하고 해당 태그 중 class 속성값에 button이 포함된 태그만 선택 */
+        
+        #div02 > .ul3 {
+            list-style-type: none;
+        }
+        #div02 > .ul3::after {
+            content: "";
+            clear: both;
+            display: block;
+        }
+        #div02 > .ul3 > li {
+            float: left;
+            margin: 5px;
+            padding: 5px;
+        }
+        /* ~=는 단어별 적용이다.(하이픈 미포함) 해당값이 포함될 경우 스타일 적용 class에 button이 포함되기만 하면 다 적용*/
+        /* 단어는 100프로 일치 해야하는듯 */
+        #div02 > .ul3 a[class~="button"] {
+            border: 1px solid black;
+            box-shadow: 4px 4px rgba(0, 0, 0, 0.4);
+            border-radius: 5px;
+        }
+
+        /* |=는 단어별+하이픈 포함 적용이다. us다음 하이푼까지 적용(us-) */
+        #div02 > .ul4 a[title|="us"] { background-color: cornflowerblue;}
+        /* ja인데 jap까지 들어가있어서 적용X */
+        #div02 > .ul4 a[title|="jap"] { background-color:  crimson;}
+        #div02 > .ul4 a[title|="chn"] { background-color: greenyellow;}
+        /* ko라는 단어가 존재하긴 하지만 하이푼은 인식 못해서 스타일 적용 X */
+        #div02 > .ul4 a[title1="ko"] { background-color: khaki;}
+
+        /* ^=은 시작부터 eng가 들어가야하는데 us-english라고 돼있어서 적용 X */
+        #div02 > .ul5 a[title^="eng"] { background-color: cornflowerblue; }
+        #div02 > .ul5 a[title^="jap"] { background-color: crimson; }
+        #div02 > .ul5 a[title^="chin"] { background-color: greenyellow; }
+
+        /* $=는 특정값으로 끝나면 스타일 적용 */
+        #div02 > .ul6 a[href$="hwp"] { background-color: #ccc;}
+        #div02 > .ul6 a[href$="docx"] { background-color: darkorange;}
+        #div02 > .ul6 a[href$="xlsx"] { background-color: violet;}
+
+        /* *=는 어느 위치든 일치하는 값이 존재 하기만 하면 스타일 적용 */
+        #div02 > .ul7 a[href*="um"] {
+            background-color: aquamarine;
+            font-size: 32px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div01">
+        <h3>인접 형제 선택자 사용</h3>
+
+        <h1>예약 방법 & 이용 요금</h1>
+        <!-- 인접 형제 선택자 : 바로 아래 오는 형제 태그에만 적용 -->
+        <p>아직 온라인 에약....</p>
+        <!-- 인접 형제 선택자 : 바로 밑에 있는 형제 태그가 아니라서 적용되지 않는다 -->
+        <h4>가족실 (2 ~ 4인) : 60,000원/일</h4>
+        <p>도모토리 (4인 공용) : 25,000원/일</p>
+        <div>
+            <!-- 등급이 같지 않아 형제 선택자로 스타일 지정되지 않는다 -->
+            <p>div01의 자손 태그인 p태그</p>
+        </div>
+    </div>
+
+<br><hr><br>
+
+    <div id="div02">
+        <h3>속성 선택자 사용</h3>
+
+        <ul class="ul1">
+            <li><a>메인 메뉴</a></li>
+            <li><a href="#">메뉴1</a></li>
+            <li><a href="#">메뉴2</a></li>
+            <li><a href="#">메뉴3</a></li>
+            <li><a href="#">메뉴4</a></li>
+        </ul>
+
+        <ul class="ul2">
+            <!-- 적용O -->
+            <li><a href="http://www.google.co.kr" target="_blank">Google</a></li>
+            <!-- 적용X 100%일치해야 적용된다 -->
+            <li><a href="http://www.daum.net" target="_self">Daum</a></li>
+            <li><a href="http://www.naver.com" target="_top">Naver</a></li>
+        </ul>
+
+        <ul class="ul3">
+            <li><a href="#" class="flat">메뉴 1</a></li>
+            <li><a href="#" class="flat">메뉴 2</a></li>
+            <li><a href="#" class="button">메뉴 3</a></li>
+            <li><a href="#" class="flat button">메뉴 4</a></li>
+        </ul>
+
+        <br>
+
+        <ul class="ul4">
+            <li><a href="#" title="us-english">영어</a></li>
+            <li><a href="#" title="ja">일본어</a></li>
+            <li><a href="#" title="chn">중국어</a></li>
+            <li><a href="#" title="ko-kr">한국어</a></li>
+        </ul>
+
+        <ul class="ul5">
+            <li><a href="#" title="us-english">영어</a></li>
+            <li><a href="#" title="japanese">일본어</a></li>
+            <li><a href="#" title="chinese">중국어</a></li>
+            <li><a href="#" title="korean">한국어</a></li>
+        </ul>
+
+        <ul class="ul6">
+            <li><a href="intro.hwp">hwp 파일</a></li>
+            <li><a href="intro.docx">docx 파일</a></li>
+            <li><a href="intro.xls">xls 파일</a></li>
+        </ul>
+
+        <ul class="ul7">
+            <li><a href="http://www.naver.com">네이버 홈페이지</a></li>
+            <li><a href="http://www.google.co.kr">구글 홈페이지</a></li>
+            <li><a href="http://www.daum.net">다음 홈페이지</a></li>
+        </ul>
+    </div>
+</body>
+
+</html>

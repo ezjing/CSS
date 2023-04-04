@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구글 폰트 사용하기</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dokdo&family=Dongle&display=swap" rel="stylesheet">
+
+    <style>
+
+        #div01 .font1 {
+            font-family: 'Dokdo', cursive;
+            font-size: 24px;
+        }
+        #div01 .font2 {
+            font-family: 'Dongle', sans-serif;
+            font-size: 1.5em;
+            color: antiquewhite;
+        }
+
+        #div03 > .text-start { text-align: start;}
+        #div03 > .text-center { text-align: center;}
+        #div03 > .text-end {text-align: end;}
+        #div03 > .text-justify {text-align: justify;}
+
+        #div04 > .line-height, #div04 > .line-height-px, #div04 > .lin-height-pt {
+            font-size: 1.2em;
+        }
+        #div04 > .line-height-px {
+            line-height: 100px;
+        }
+        #div04 > .line-height-pt {
+            line-height : 500%
+        }
+
+        #div06 > p {
+            font-family: 'Dongle', sans-serif;
+            font-size: 2em;
+        }
+        #div06 > .shadow1 { text-shadow: 5px 5px 3px gray;}
+        #div06 > .shadow2 { text-shadow: -5px -5px 3px gray;}
+        #div06 > .shadow3 { text-shadow: 5px 5px 0 gray}
+        #div06 > .shadow4 {text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;}
+
+        #div07 > p {font-size: 2em;}
+        #div07 > .text-transform-none {text-transform: none;}
+        #div07 > .text-transform-capitalize {text-transform: capitalize;}
+        #div07 > .text-transform-UpperCase {text-transform: UpperCase;}
+        #div07 > .text-transform-LowerCase {text-transform: LowerCase;}
+
+        #div08 > p { font-size: 1.5em; }
+        #div08 > .letter { letter-spacing: 0.5em; }
+        #div08 > .word { word-spacing: 1em ;}
+
+        #div09 > .book1 { list-style-type: none; }
+        #div09 > .book2 { list-style-type: upper-alpha; }
+        #div09 > .list-image { list-style-image: url("dia.png");}
+        #div09 > .position-inside { 
+            list-style-position: inside;
+        }
+        #div09 > .position-outside { 
+            list-style-position: outside; 
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="div01">
+        <h3>구글 폰트 사용하기</h3>
+        <p>구글 폰트를 적용하지 않은 글자</p>
+        <p class="font1">구글 폰트를 적용한 글자 1</p>
+        <p class="font2">구글 폰트를 적용한 글자 2</p>
+    </div>
+
+    <br><hr><br>
+
+    <div id="div02">
+        <h3>color 색상 적용하기</h3>
+
+        <div id="div02-1">
+            <h3>컬러 이름 사용</h3>
+            <p style="color: coral;">컬러 이름을 색상을 변경할 태그1</p>
+            <p style="color: crimson;">컬러 이름을 색상을 변경할 태그2</p>
+        </div>
+
+        <br><br>
+
+        <div id="div02-2">
+            <h3>hex 방식</h3>
+            <p style="color: #ffffff;">hex 방식으로 색상을 변경할 태그1</p>
+            <p style="color: #000000;">hex 방식으로 색상을 변경할 태그2</p>
+        </div>
+
+        <br><br>
+
+        <div id="div02-3">
+            <h3>rgb/rgba 방식</h3>
+            <p style="color: rgb(255, 149, 149);">rgb 방식으로 색상을 변경할 태그1</p>
+            <p style="color: rgb(80, 0, 0);">rgb 방식으로 색상을 변경할 태그2</p>
+            <p style="color: rgba(0, 5, 80, 80%);">rgba 방식으로 색상을 변경할 태그1</p>
+        </div>
+
+        <br><br>
+
+        <div id="div02-4">
+            <h3>hsl/hsla 방식</h3>
+            <p style="color: hsl(195, 100%, 50%);">hsl 방식으로 색상을 변경할 태그1</p>
+            <p style="color: hsl(247, 100%, 35%);">hsl 방식으로 색상을 변경할 태그2</p>
+            <p style="color: hsla(89, 100%, 30%, 29%);">hsla 방식으로 색상을 변경할 태그1</p>
+        </div>
+    </div>
+
+    <br><hr><br>
+
+    <div id="div03">
+        <h3>text-align 사용하기</h3>
+        <p class="text-star">start 사용 시</p>
+        <p class="text-center">center 사용 시</p>
+        <p class="text-end">end 사용 시</p>
+        <!-- 양쪽 정렬은 왼쪽 정렬 + 오른쪽 정렬이다 오른쪽을 자세히 보면 차이를 알 수 있다 -->
+        <p class="text-star" style="font-size: 24px;">start 사용 시 이상의 일월과 열락의 우는 때문이다. 커다란 생의 뜨고, 말이다. 그들의 인도하겠다는 그들은 심장은 인생에 것이다. 피가 없으면, 별과 끝까지 무엇을 쓸쓸하랴? 보이는 끓는 품고 동력은 운다. 봄날의 남는 소금이라 가슴이 대고, 천지는 얼음이 끓는다. 같지 않는 반짝이는 거친 무엇을 소금이라 말이다. 만물은 피어나기 옷을 내는 우리 그들은 눈에 그것을 있다. 불어 놀이 인생에 이상을 그러므로 같으며, 석가는 약동하다.            
+            풍부하게 속잎나고, 이상이 약동하다. 그들에게 길을 가치를 광야에서 천자만홍이 황금시대다. 이성은 웅대한 설레는 품었기 예수는 물방아 가는 낙원을 피어나기 보라. 인도하겠다는 위하여, 맺어, 피부가 수 산야에 인생에 그들은 것이다. 천지는 싸인 어디 없으면, 보배를 우는 청춘의 뿐이다. 풀이 같으며, 길을 이상은 위하여서. 무한한 꾸며 않는 있는가? 공자는 날카로우나 심장은 무한한 이상 그들의 듣는다. 몸이 속에서 청춘이 커다란 이상은 전인 인간의 있으랴?</p>
+        <p class="text-justify" style="font-size: 24px;">justify 사용 시 이상의 일월과 열락의 우는 때문이다. 커다란 생의 뜨고, 말이다. 그들의 인도하겠다는 그들은 심장은 인생에 것이다. 피가 없으면, 별과 끝까지 무엇을 쓸쓸하랴? 보이는 끓는 품고 동력은 운다. 봄날의 남는 소금이라 가슴이 대고, 천지는 얼음이 끓는다. 같지 않는 반짝이는 거친 무엇을 소금이라 말이다. 만물은 피어나기 옷을 내는 우리 그들은 눈에 그것을 있다. 불어 놀이 인생에 이상을 그러므로 같으며, 석가는 약동하다.            
+            풍부하게 속잎나고, 이상이 약동하다. 그들에게 길을 가치를 광야에서 천자만홍이 황금시대다. 이성은 웅대한 설레는 품었기 예수는 물방아 가는 낙원을 피어나기 보라. 인도하겠다는 위하여, 맺어, 피부가 수 산야에 인생에 그들은 것이다. 천지는 싸인 어디 없으면, 보배를 우는 청춘의 뿐이다. 풀이 같으며, 길을 이상은 위하여서. 무한한 꾸며 않는 있는가? 공자는 날카로우나 심장은 무한한 이상 그들의 듣는다. 몸이 속에서 청춘이 커다란 이상은 전인 인간의 있으랴?</p>
+    </div>
+
+    <br><hr><br>
+
+    <div id="div04">
+        <h3>line-height 사용하기</h3>
+        <p class="line-height">line-height를 적용하지 않은 태그1</p>
+        <p class="line-height">line-height를 적용하지 않은 태그2</p>
+        <p class="line-height-px">line-height를 적용한 태그1</p>
+        <p class="line-height-pt">line-height를 적용한 태그2</p>
+    </div>
+
+    <br><hr><br>
+
+    <div id="div05">
+        <h3>text-decoration 사용하기</h3>
+        <p style="text-decoration: none;">none 사용 시</p>
+        <p style="text-decoration: underline;">underline 사용 시</p>
+        <p style="text-decoration: overline;">overline 사용 시</p>
+        <p style="text-decoration: line-through;">line-through 사용 시</p>
+    </div>
+
+    <br><hr><br>
+
+    <div id="div06">
+        <h3>text-shadow 사용하기</h3>
+        <p>text-shadow 미사용</p>
+        <p class="shadow1">text-shadow 사용1</p>
+        <p class="shadow2">text-shadow 사용2</p>
+        <p class="shadow3">text-shadow 사용3</p>
+        <p class="shadow4">text-shadow 사용4</p>
+    </div>
+
+    <br><hr><br>
+
+    <div id="div07">
+        <h3>text-transform 사용하기</h3>
+        <!-- 적용 X -->
+        <p class="text-transform-none">NoNe 사용</p>
+        <!-- 앞글자 대문자 -->
+        <p class="text-transform-capitalize">capitalize 사용</p>
+        <!-- 전부 대문자 -->
+        <p class="text-transform-UpperCase">UpperCase 사용</p>
+        <!-- 전부 소문자 -->
+        <p class="text-transform-LowerCase">LowerCase 사용</p>
+    </div>
+
+    <br><hr><br>
+
+    <div id="div08">
+        <h3>letter, word spacing 사용하기</h3>
+
+        <p>원본 형태의 글자 및 단어 간격</p>
+        <p class="letter">letter-spacing으로 간격 조절</p>
+        <p class="word">word-spacing으로 간격 조절</p>
+    </div>
+
+    <br><hr><br>
+
+    <div id="div09">
+        <h3>list-style-type 사용하기</h3>
+
+        <ul class="book1">
+            <li>html5</li>
+            <li>CSS3</li>
+            <li>Javascript</li>
+        </ul>
+        <ul class="book2">
+            <li>Java</li>
+            <li>SQL</li>
+            <li>JSP</li>
+        </ul>
+
+    <br><hr><br>
+
+    <h3>list-style-image 사용하기</h3>
+    <ul>
+        <li>HTML5</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+    <h3>list-style-image 사용하기</h3>
+    <!-- 이미지를 불릿으로 사용하기 -->
+    <ul class="list-image">
+        <li>HTML5</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+<br>
+<h3>list-style-position 사용하기</h3>
+    <!-- 기본값 -->
+    <ul>
+        <li>HTML5</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+    <br>
+    <!-- inside 들여쓰기 -->
+    <ul class="position-inside">
+        <li>HTML5</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+<br>
+    <!-- outside가 기본값이다 -->
+    <ul class="position-outside">
+        <li>HTML5</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+    </ul>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 4일차 2번 파일</title>
+    <style>
+        /* 반응형 웹 사용 시 모바일 화면을 기준으로 CSS 스타일을 적용하고 미디어 쿼리를 통해서 변경할 부분의 CSS 스타일을 적용하는 형식으로 사용하는 것이 좋음 */
+        .wrapper {
+            /* 자식 요소가 부모 요소의 범위를 초과 할 때 화면에 표시하는 방식 결정 */
+            /* 부모태그 크기 조절 안해둬서 부모태그 크기가 같이 커짐 */
+            /* 부모태그 크기를 지정했는데 자식태그가 부모보다 크면 스크롤 생긴다 */
+            overflow: auto;
+        }
+
+        #main {
+            margin-left: 4px;
+        }
+
+        #leftsidebar {
+            /* float을 사용하면 블록요소 한줄에 사용 가능인데 none이라 한줄 사용 불가 */
+            /* 근데 한줄에 있는 원인은 미디어쿼리가 먼저 먹혀서그렇다 */
+            float: none;
+            width: auto;
+        }
+        .menuitem {
+            background: #CDF0F6;
+            border: 1px solid #d4d4d4;
+            border-radius: 4px;
+            list-style-type: none;
+            margin: 4px;
+            padding: 2px;
+        }
+        
+        /* 화면의 크기가 최소 760px '이상'일 경우 아래의 설정을 사용 */
+        @media screen and (min-width: 760px) {
+            #leftsidebar {
+                width: 200px;
+                float: left;
+            }
+
+            #main {
+                margin-left: 216px;
+            }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="wrapper">
+        <div id="leftsidebar">
+            <ul id="menulist">
+                <li class="menuitem">메뉴 1</li>
+                <li class="menuitem">메뉴 2</li>
+                <li class="menuitem">메뉴 3</li>
+                <li class="menuitem">메뉴 4</li>
+            </ul>
+        </div>
+
+        <div id="main">
+            <h1>미디어 쿼리를 사용하기</h1>
+            <p>화면의 크기를 조절하면 화면 UI가 변경됨</p>
+            <p>760px을 기준으로 사이드바 메뉴가 변경 됨</p>
+        </div>
+    </div>
+</body>
+</html>

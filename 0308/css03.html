@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 4일차 3번 파일</title>
+    <style>
+        body {
+            background:  url(001.jpg) no-repeat fixed;
+            background-size: cover;
+        }
+
+        /* 최대 너비 1024px 보다 작을 때 동작 */
+        /* html은 위에서부터 아래로 서순이 정해지기 때문에 순서를 잘 지켜주어야 한다 */
+        /* 기준을 min으로할지 max로 할지 정하고 작업하는게 좋다 */
+        /* 미디어쿼리를 여러개 사용하여 여러가지 화면 크기에 맞게 대응할 수 있음 */
+        @media screen and (max-width: 1024px) {
+            body {
+                background: url(002.jpg) no-repeat fixed;
+                background-size: cover;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            body {
+                background: url(003.jpg) no-repeat fixed;
+                background-size: cover;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            body {
+                background: url(004.jpg) no-repeat fixed;
+                background-size: cover;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
